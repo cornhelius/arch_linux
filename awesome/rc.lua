@@ -322,8 +322,8 @@ vcaf = lain.widgets.base({
 mailwork = lain.widgets.imap({
     timeout  = 120,
     server   = "imap.gmail.com",
-    mail     = "andrea.calzavacca@gmail.com",
-    password = "@ntisg@mo",
+    mail     = "insert_email",
+    password = "insert_password",
     is_plain = true,
     settings = function()
         if mailcount > 0 then
