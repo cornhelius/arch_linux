@@ -1,0 +1,13 @@
+<submenu>
+<menu label="Utilità" >
+<action label="Cartella BE::Shell" exec="dolphin $HOME/.kde4/share/apps/be.shell"/>
+<action label="Cartella Tema" exec="dolphin $HOME/.kde4/share/apps/be.shell/Themes"/>
+<action label="Cartella Scripts" exec="dolphin $HOME/.kde4/share/apps/be.shell/Scripts"/>
+<menu menu="Menu/Edit"/>
+<action label="Aggiorna Global Menu" exec="touch $HOME/.kde4/share/apps/be.shell/MainMenu.xml"/>
+<action label="Ricarica Shell" exec="kquitapp be.shell;sleep 1;be.shell"/>
+<action label="Ricarica KWin" exec=" kwin --replace"/>
+<action label="Ritorna a Plasma" exec="kquitapp be.shell;sleep 1;plasma-desktop"/>
+<action label="Screeshot" exec="ksnapshot"/>
+</menu>
+</submenu>

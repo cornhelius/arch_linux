@@ -1,0 +1,10 @@
+<submenu>
+  <!--This menu allows to edit all the GlobalMenu files. The command "kde-open" is a reference to the default program associated to a certain extension, you can change your current settings  in 'kcmshell4 filetypes' -->
+  <menu label="Modifica Menu">
+     <action label="Menu Principale" exec="kde-open $HOME/.kde4/share/apps/be.shell/MainMenu.xml"/>
+     <action label="Applicazioni" exec="kde-open $HOME/.kde4/share/apps/be.shell/Menu/Applicazioni.xml"/>
+     <action label="Utilitità" exec="kde-open $HOME/.kde4/share/apps/be.shell/Menu/Utilità.xml"/>
+    <action label="Sistema" exec="kde-open $HOME/.kde4/share/apps/be.shell/Menu/Sistema.xml"/>
+    <action label="Questo menu" exec="kde-open $HOME/.kde4/share/apps/be.shell/Menu/Edit.xml"/>
+  </menu>
+ </submenu>

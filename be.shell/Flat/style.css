@@ -1,0 +1,272 @@
+/*Flat theme for Be::Shell by Cornhelius 
+ 
+/* Here starts the panels config*/
+
+#TopPanel { 
+  background:rgba(49,54,59,150);
+  border:none;
+}
+
+#Clock {
+  color: rgb(255,255,255);
+  font-family:senza grazie;
+  font-size:9pt;
+  padding-bottom:0px;
+  padding-left:6px;
+  padding-right:6px;
+  border: none;
+}
+
+.BE--Volume { 
+  padding-right:1px; 
+  margin:0px;
+  max-width:18px;
+}
+
+#BottomPanel { 
+  background-color:qlineargradient(x1:0, y1:0, x2:0, y2:1, x3:0, y3:2, stop:0 rgba(0,0,0,120), stop:1 rgba(49,54,59,100), stop:2 rgba(0,0,0,120));
+  border:none;
+}
+
+#mpc {
+  background-color:transparent;
+  margin:5 8 3 0;
+  font-size:9pt;
+  font-family:Senza grazie;
+  border:none;
+  color:rgb(255,255,255);
+}
+
+/* L'intera taskbar */
+.BE--Tasks {
+  border:none;
+  border-bottom: transparent;
+  border-top-right-radius: 4px;
+  padding-left:0px;
+  padding-right:0px;
+  padding-top:4px;
+  max-width:2000px;
+}
+
+/* Le singole task */
+.BE--Task {
+  margin: -1 0 0 0;
+  padding: 1 0 0 0;
+  max-width:36px;
+  max-height:36px;
+  border-top:2px solid rgba(255,255,255,0); /*serve un colore e opacità zero perché transparent non genera il bordo corretto*/
+  padding-bottom:16px;
+  padding-left:2px;
+  padding-right:2px;
+}
+
+.BE--Task::hover {
+  border-top:2px solid;
+  border-color:rgb(62,175,232);
+}
+
+/*Task attive*/
+#OneTask, #ManyTasks {
+  background-image:url("/home/nemo/.kde4/share/icons/dynamo-icon-theme/status/scalable/task_active1");
+  background-position:bottom;
+  background-repeat:no-repeat;
+  padding-bottom:16px;
+  padding-left:2px;
+  padding-right:2px;
+}
+
+#spacer1 {
+  min-width:330px;  
+}
+
+#spacer2 {
+  max-width:130px
+}
+
+#spacer3 {
+  max-width:470px;
+}
+
+#spacer4 {
+  max-width:340px;
+}
+
+/*Pulsanti*/
+#exit {
+  background:transparent;
+  border:none;
+  padding-right:6px;
+  padding-top:1px;
+  max-width:18px;
+  max-height:18;
+}
+
+#start {
+  background:transparent;
+  border:none;
+  max-width:24;
+  padding-left:2;
+}
+
+.BE--Session:menu-indicator {
+  image:none;
+}
+
+/*Pager*/
+
+.BE--Pager {
+  background:transparent;
+  padding:0px;
+  padding-right:3px;
+  padding-top:30px; 
+}
+
+.BE--Pager QToolButton {
+  background-image: url("/home/nemo/.kde4/share/icons/dynamo-icon-theme/status/scalable/dot1.svg");
+  background-position:center;
+  background-repeat:no-repeat;
+  border-radius:6px;
+  padding-top:0px;
+  padding-left:0px;
+  padding-right:0px;
+  border:none;
+  color:transparent;
+}
+
+.BE--Pager QToolButton:checked {
+  border-radius:6px;
+  background-image: url("/home/nemo/.kde4/share/icons/dynamo-icon-theme/status/scalable/dot_check1.svg");
+  background-position:center;
+  background-repeat:no-repeat;
+  background-color:transparent;
+  padding-top:0px;
+  border:none;
+  border: transparent;
+  color:transparent;
+}
+
+.BE--Pager QToolButton:hover {
+  background-image: url("/home/nemo/.kde4/share/icons/dynamo-icon-theme/status/scalable/dot_check1.svg");
+  background-position:center;
+  background-repeat:no-repeat;
+  border-radius:6px;
+  padding-top:0px;
+  border:none;
+  color:transparent;
+} 
+
+/*Global Menu*/
+
+.BE--GMenu QMenuBar {  font:9pt senza grazie; padding:2 12 0 0; }
+
+.BE--GMenu QMenuBar::item {
+  color:rgb(255,255,255);
+}
+
+.BE--GMenu QMenuBar::item::selected {
+  color:rgb(255,255,255);
+  border-top:1px solid;
+  border-color:rgb(62,175,232);
+  margin:0px;
+}
+
+/*The menus */
+
+QMenu {
+  background:rgb(49,54,59);
+  color:rgb(255,255,255);
+  border:none;
+  font-size:9pt;
+  font-family:senza grazie;
+}
+
+QMenu::item {
+  border:1.5px transparent;  
+  padding:3 24 3 2;
+}
+
+QMenu::item:selected {
+  border-top:1px solid rgb(255,255,255);
+  padding:3 24 3 2;
+}
+
+QMenu::indicator {
+  subcontrol-origin: margin;
+  subcontrol-position: top right;
+  margin:6px;
+}
+
+QMenu::indicator:non-exclusive:unchecked {
+  background: rgba(255,255,255,70);
+  border-radius:0px;
+  margin:7px;
+}
+
+QMenu::indicator:non-exclusive:checked {
+  background:rgba(255,255,255,70);
+  border-radius:3px;
+}
+
+QMenu::separator {
+  height:1px;
+  border:none;
+  background:rgba(255,255,255,70);
+}
+
+
+#Calendar {
+  background:rgba(62,175,232,150);
+  color:black;
+}
+
+#Calendar * {
+  color:black;
+  selection-background-color:rgba(62,175,232,150);
+  selection-color:black;
+}
+
+#Calendar QToolButton {
+  font-family:senza grazie;
+  font-size:9pt;
+  padding-left: 1px;
+  padding-top:1px;
+  padding-bottom:10px;
+  padding-right: 1px;
+}
+
+#Calendar QWidget {
+  font-size:7pt;
+  background:rgb(132,132,132);
+}
+
+#Calendar QWidget:Qlabel {
+  font-size:5pt;
+  background:rgb(132,132,132);
+}
+
+#Calendar QComboBox {
+  margin:4px;
+  padding-right:6px;
+  border:none;
+}
+
+#Calendar QComboBox::drop-down {
+  border:none;
+  background:transparent;
+}
+
+#Calendar QComboBox::down-arrow, QMenu::left-arrow {
+  position:absolute;
+  subcontrol-origin: margin;
+  subcontrol-position: top right;
+  margin:3px;
+  margin-top:6px;
+  margin-bottom:6px;
+  width:13px;
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #BBBBBB, stop:1 #D1D1D1);
+  border:1px solid #AAAAAA;
+}*/
+
+#Calendar .KDatePicker {
+  margin:8px;
+}

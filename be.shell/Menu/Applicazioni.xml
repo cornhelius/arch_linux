@@ -1,0 +1,53 @@
+<submenu>
+<menu label="Applicazioni">
+<menu label="Accessori">
+  <action label="Dolphin" exec="dolphin"/>
+  <action label="Konsole" exec="konsole"/>
+  <action label="Kate" exec="kate"/>
+</menu>
+<menu label="Multimedia">
+<action label="BE::MPC" exec="be.mpc"/>    
+  <action label="Mplayer" exec="mplayer"/>
+  <action label="Vlc" exec="vlc"/>
+  <action label="Gwenview" exec="gwenview"/>
+  <action label="Gimp" exec="gimp"/>
+  <action label="Inkscape" exec="inkscape"/>
+  <action label="K3b" exec="k3b"/>
+  <action label="Amarok" exec="amarok"/>
+</menu>
+<menu label="Guide">
+  <action label="VimTutor" exec="konsole --profile Editor --hold -e vimtutor; qdbus org.kde.kglobalaccel /component/kwin invokeShortcut 'Window Maximize Vertical'"/>
+</menu>
+<menu label="Ufficio">
+  <action label="Calligra Words" exec="calligrawords"/>
+  <action label="Calligra Sheets" exec="calligrasheets"/>
+  <action label="Calligra Flow" exec="calligraflow"/>
+  <action label="Calligra Plan" exec="calligraplan"/>
+  <action label="Okular" exec="okular"/>
+  <action label="Calibre" exec="calibre"/>
+</menu>
+<menu label="Internet">
+  <action label="Firefox" exec="firefox"/>
+  <action label="Skype" exec="skype"/>
+  <action label="Konversation" exec="konversation"/>
+  <action label="Ktorrent" exec="ktorrent"/>
+  <action label="FileZilla" exec="filezilla"/>
+</menu>
+<menu label="KDEpim">
+  <action label="Kmail" exec="kmail"/>
+  <action label="Korganizer" exec="korganizer"/>
+  <action label="Kalarm" exec="kalarm"/>
+  <action label="Knotes" exec="knotes"/>
+  <action label="Kontact" exec="kontact"/>
+  <action label="Akregator" exec="akregator"/>
+</menu>
+<menu label="Sviluppo">
+<action label="Qt Creator" exec="creator"/>
+<action label="Qt Designer" exec="designer"/>
+<action label="Qt Linquist" exec="linguist"/>
+<action label="Eclipse" exec="eclipse"/>
+<action label="IDLE" exec="idle"/>
+<action label="K Develop" exec="kdevelop"/>
+</menu>
+</menu>
+</submenu>

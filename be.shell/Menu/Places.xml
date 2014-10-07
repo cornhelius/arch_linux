@@ -1,0 +1,1 @@
+<menu label="Places"> <action label="abs" exec="file:///home/nemo/abs"/> <action label="AUR" exec="file:///home/nemo/AUR/"/> <action label="documenti" exec="file:///home/nemo/documenti"/> <action label="Sony Xperia SP" exec="kdeconnect://3b504116d00ed145/"/> </menu>

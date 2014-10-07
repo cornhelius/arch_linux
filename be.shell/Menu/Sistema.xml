@@ -1,0 +1,64 @@
+<submenu>
+<menu label="Sistema">
+<menu label="Preferenze">
+<action label="Impostazioni" exec="systemsettings"/>
+<action label="Configurazione rete" exec="kcmshell4 kcm_networkmanagement"/>
+<action label="Animations" exec="kcmshell4 kwincompositing"/>
+<action label="Oracle VirtualBox" exec="virtualbox"/>
+</menu>
+<menu label="Amministrazione">
+<action label="Monitor di sistema" exec="ksysguard"/>
+<action label="Informazioni" exec="kinfocenter"/>
+<action label="QDbus" exec="qdbusviewer"/>
+<action label="Editor di partizioni" exec="kdesu partitionmanager"/>
+<separator/>
+<action label="Systemd Enabled" exec="konsole --hold -e sudo systemctl list-units"/>
+</menu>
+<!-- <menu label="Virtual Machines" icon="drive-harddisk">
+<action label="Elementary" icon="media-optical-cd" exec="VirtualBox -startvm Elementary"/>
+<action label="Backtrack" icon="media-optical-cd" exec="VirtualBox -startvm Backtrack"/>
+</menu> -->
+<menu label="Info">
+<action label="BE-Desk Group" exec="http://be-desk.deviantart.com/"/>
+<action label="About Be::Shell" exec="firefox http://sourceforge.net/p/be-shell/wiki/browse_pages/"/>
+<action label="About KDE" exec="khelpcenter"/>
+<action label="Shell Code" exec="http://sourceforge.net/p/be-shell/code/ci/720fdaa4baf234c076df3e0aed9e419762641e01/tree/"/>
+<action label="Bespin SVN Code" exec="http://sourceforge.net/p/cloudcity/code/HEAD/tree/"/>
+</menu>
+<separator/>
+<menu label="Nemo" >
+<menu label="Bespin">
+<action label="Bespin" exec="bespin"/>
+<action label="Stored" exec="kwrite $HOME/.config/Bespin/Store.conf"/>
+<action label="Styles" exec="kwrite $HOME/.config/Bespin/Style.conf"/>
+</menu>
+<menu label="Arch">
+<action label="Edit pacman.conf" exec="kdesu kate /etc/pacman.conf"/>
+<action label="Arch Forum" exec="firefox https://bbs.archlinux.org/"/>
+<action label="AUR" exec="firefox http://aur.archlinux.org/"/>
+<action label="Arch Wiki" exec="firefox https://wiki.archlinux.org/"/>
+<separator/>
+<action label="Reflector" exec="konsole --hold -e sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist"/>
+<action label="Update" exec="konsole --hold -e sudo pacman -Syyu"/>
+<action label="Update AUR" exec="konsole --hold -e yaourt -Syua --devel"/>
+</menu> 
+<menu label="Configurazioni">
+<action label="be.watched.conf" exec="be.watched edit"/>
+<action label="mpd.conf" exec="kate ~/.mpd/mpd.conf"/>
+<action label="psd.conf" exec="kdesu kate /etc/psd.conf"/>
+<action label="infinality.sh" exec="kdesu kate /etc/profile.d/infinality-settings.sh"/>
+</menu>
+<menu label="Zsh">
+<action label="Edit Zshrc" exec="kwrite ~/.zshrc"/>
+<action label="Reload Zshrc" exec="konsole -e source ~/.zshrc"/>
+</menu>
+<action label="Scorciatoie Kwin" exec="konsole --hold -e qdbus org.kde.kglobalaccel /component/kwin shortcutNames"/>
+<action label="KCM"  exec="konsole --hold -e kcmshell4 --list"/>
+<action label="Visualizzatore icone" exec="kdialog --geticon azioni"/>
+</menu>
+<action label="Esci" exec="konsole -e qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout 0 0 0"/>
+<action label="Blocca" exec="qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock"/>
+<action label="Riavvia" exec="systemctl reboot"/>
+<action label="Spegni" exec="systemctl poweroff"/>
+</menu>
+</submenu>

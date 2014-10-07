@@ -1,0 +1,9 @@
+
+<menubar>
+  <menu menu="MainMenu/kate"/>
+  <menu menu="BE::Config"/>
+  <menu menu="Menu/Applicazioni"/>
+  <menu menu="Menu/Utilità"/>
+  <menu menu="Menu/Sistema"/>
+</menubar> 
+
