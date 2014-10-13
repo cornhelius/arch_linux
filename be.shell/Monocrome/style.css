@@ -1,0 +1,287 @@
+/*Flat theme for Be::Shell by Cornhelius 
+ 
+/* Here starts the panels config*/
+
+#calPanel {
+  /*background-color:qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgb(70,70,70), stop:1 rgb(70,70,70));*/
+  background-color:transparent;
+  border-bottom-left-radius:0px;
+  border-bottom-right-radius:0px;
+}
+
+#calendarscript QAbstractButton { font-family:armata; }
+
+#Clock {
+  color: rgb(255,255,255);
+  font-family:senza grazie;
+  font-size:9pt;
+  padding-bottom:0px;
+  padding-left:6px;
+  padding-right:12px;
+  border: none;
+}
+
+.BE--Volume { 
+  padding-bottom:1px;
+  padding-left:1px;
+  margin:0px;
+  max-width:18px;
+}
+
+#net {
+  padding-right:0px;
+}
+
+#wifi {
+  padding-top:-1;
+  max-width:18px;
+}
+
+.BE--MediaTray QToolButton {
+  background-color:rgba(0,0,0,0);
+  border:none;
+  padding-right:1px;
+  max-width:16px;
+}
+
+.BE--MediaTray QToolButton::hover {
+  border:none;
+}
+
+#RightPanel {
+  background-color:black;
+  background-color:qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgb(70,70,70), stop:1 rgb(70,70,70));
+  border-left:2px solid rgb(255,255,255);
+}
+
+#BottomPanel {
+  background-color:transparent;
+  border:none;
+}
+
+#up {
+  color:rgb(255,255,255);
+  padding-left:3px;
+}
+
+#mail {
+  color:rgb(255,255,255);
+  padding-left:3px;
+}
+
+#mpc {
+  background-color:transparent;
+  padding-top:0px;
+  padding-right:2px;
+  font-size:9pt;
+  font-family:Armata;
+  border:none;
+  color:rgb(255,255,255);
+}
+
+/* L'intera taskbar */
+.BE--Tasks {
+  border:none;
+  border-bottom: transparent;
+  border-top-right-radius: 4px;
+  padding-left:4px;
+  padding-right:0px;
+  padding-top:4px;
+  max-width:2000px;
+}
+
+/* Le singole task */
+.BE--Task {
+  margin: -1 0 0 0;
+  padding: 1 0 0 0;
+  max-width:36px;
+  max-height:36px;
+  border-top:2px solid rgba(255,255,255,0); /*serve un colore e opacità zero perché transparent non genera il bordo corretto*/
+  padding-bottom:16px;
+  padding-left:2px;
+  padding-right:2px;
+}
+
+.BE--Task::hover {
+  background-image:url("/home/nemo/.kde4/share/icons/flat-circle-theme/status/scalable/task_active1");
+  background-position:bottom;
+  background-repeat:no-repeat;
+  padding-bottom:16px;
+  padding-left:2px;
+  padding-right:2px;
+}
+
+/*Task attive*/
+#OneTask, #ManyTasks {
+  background-image:url("/home/nemo/.kde4/share/icons/flat-circle-theme/status/scalable/task_active1");
+  background-position:bottom;
+  background-repeat:no-repeat;
+  padding-bottom:16px;
+  padding-left:2px;
+  padding-right:2px;
+}
+
+#spacer {
+  max-width:8px;
+}
+
+/*Pager*/
+.BE--Pager {
+  background:transparent;
+  padding:0px;
+  padding-right:3px; 
+}
+
+.BE--Pager QToolButton {
+  background-image: url("/home/nemo/.kde4/share/icons/Compass-KDE/status/big/pager_uncheck.svg");
+  background-position:center;
+  background-repeat:no-repeat;
+  border-radius:6px;
+  padding-top:0px;
+  padding-left:2px;
+  padding-right:0px;
+  border:none;
+  color:transparent;
+  max-width:8px;
+}
+
+.BE--Pager QToolButton:checked {
+  border-radius:6px;
+  background-image: url("/home/nemo/.kde4/share/icons/Compass-KDE/status/big/pager_check.svg");
+  background-position:center;
+  background-repeat:no-repeat;
+  background-color:transparent;
+  padding-top:0px;
+  padding-left:0px;
+  border:none;
+  color:transparent;
+  max-width:8px;
+}
+
+.BE--Pager QToolButton:hover {
+  background-image: url("/home/nemo/.kde4/share/icons/Compass-KDE/status/big/pager_check.svg");
+  background-position:center;
+  background-repeat:no-repeat;
+  border-radius:6px;
+  padding-top:0px;
+  border:none;
+  color:transparent;
+  max-width:8px;
+} 
+
+/*Global Menu*/
+.BE--GMenu QMenuBar {  font:9pt armata; padding:2 12 0 15; 
+  background-color:transparent;
+}
+
+.BE--GMenu QMenuBar::item {
+  background-color:transparent;
+  color:rgb(255,255,255);
+}
+
+.BE--GMenu QMenuBar::item::selected {
+  color:rgb(255,255,255);
+  background-color:qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(0,0,0,0), stop:0.7 rgba(130,130,130,120), stop:1 rgba(130,130,130,100));
+  border-radius:4px;
+}
+
+/*The menus */
+QMenu {
+  background:rgb(255,255,255);
+  color:#31363B;
+  border:none;
+  border-radius:4px;
+  font-size:9pt;
+  font-family:armata;
+}
+
+QMenu::item {
+  border:1.5px transparent;  
+  padding:3 24 3 2;
+}
+
+QMenu::item:selected {
+  background:rgb(108,154,212);
+  padding:3 24 3 2;
+}
+
+QMenu::indicator {
+  subcontrol-origin: margin;
+  subcontrol-position: top right;
+  margin:6px;
+}
+
+QMenu::indicator:non-exclusive:unchecked {
+  background: rgba(255,255,255,70);
+  border-radius:0px;
+  margin:7px;
+}
+
+QMenu::indicator:non-exclusive:checked {
+  background:rgba(255,255,255,70);
+  border-radius:3px;
+}
+
+QMenu::separator {
+  height:1px;
+  border:none;
+  background:#DFDFE9;
+}
+
+/*Calendar*/
+#Calendar {
+  background:rgba(62,175,232,150);
+  color:black;
+}
+
+#Calendar * {
+  color:black;
+  selection-background-color:rgba(62,175,232,150);
+  selection-color:black;
+}
+
+#Calendar QToolButton {
+  font-family:senza grazie;
+  font-size:9pt;
+  padding-left: 1px;
+  padding-top:1px;
+  padding-bottom:10px;
+  padding-right: 1px;
+}
+
+#Calendar QWidget {
+  font-size:7pt;
+  background:rgb(132,132,132);
+}
+
+#Calendar QWidget:Qlabel {
+  font-size:5pt;
+  background:rgb(132,132,132);
+}
+
+#Calendar QComboBox {
+  margin:4px;
+  padding-right:6px;
+  border:none;
+}
+
+#Calendar QComboBox::drop-down {
+  border:none;
+  background:transparent;
+}
+
+#Calendar QComboBox::down-arrow, QMenu::left-arrow {
+  position:absolute;
+  subcontrol-origin: margin;
+  subcontrol-position: top right;
+  margin:3px;
+  margin-top:6px;
+  margin-bottom:6px;
+  width:13px;
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #BBBBBB, stop:1 #D1D1D1);
+  border:1px solid #AAAAAA;
+}*/
+
+#Calendar .KDatePicker {
+  margin:8px;
+}

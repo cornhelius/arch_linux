@@ -24,7 +24,7 @@ if [ $1 = "sensors" ]; then
   let "USEDPERC=(1000*$USED/$TOT+5)"
   PERC=`echo $USEDPERC|awk '{ print $1/10 }'`
   PERC="${PERC%%.*}"
-  REPLY="${REPLY}<div>$(echo "<img src=\"${ICONPATH}Memory.png\" width=\"16\" height=\"16\"> <font color=\"$NORMAL\"> $(echo $PERC)%</font>")&nbsp; $(echo "<img src=\"${ICONPATH}Gear.png\" width=\"16\" height=\"16\"> <font color=\"$NORMAL\">$g%</font>")</div>"
+  REPLY="${REPLY}<div>$(echo "<font color=\"#FFFFFF\"> $(echo $PERC)%</font>")&nbsp; $(echo "<font color=\"#FFFFFF\">$g%</font>")</div>"
   echo "$REPLY"
 
 elif [ $1 = "net" ]; then
@@ -35,6 +35,22 @@ elif [ $1 = "net" ]; then
       echo "<img src=\"$HOME/.kde4/share/icons/flat/network-connect.svg\" width=\"20\" height=\"20\">"
     else
       echo "<img src=\"$HOME/.kde4/share/icons/flat/network-disconnect.svg\" width=\"20\" height=\"20\">"
+    fi
+    
+elif [ $1 = "wifi" ]; then
+
+  NET=`iwlist scan 2>/dev/null | sed -e '/Quality/!d; s/.*Quality=\([0-9]*\).*/\1/'`
+  
+    if [ $NET > 61 ]; then
+      echo "<img src=\"$HOME/.kde4/share/icons/flat/nm-signal-100.png\" >"
+    elif [ $NET > 44 ]; then
+      echo "<img src=\"$HOME/.kde4/share/icons/flat/nm-signal-75.png\" >"
+    elif [ $NET > 26 ]; then
+      echo "<img src=\"$HOME/.kde4/share/icons/flat/nm-signal-50.png\" >"
+    elif [ $NET > 9 ]; then
+      echo "<img src=\"$HOME/.kde4/share/icons/flat/nm-signal-25.png\" >"
+    else
+      echo "<img src=\"$HOME/.kde4/share/icons/flat/nm-signal-0.png\" >"
     fi
 
 elif [ $1 = "mpc" ]; then
@@ -70,8 +86,8 @@ elif [ $1 = "mpc" ]; then
   
 elif [ $1 = "mail" ]; then
 
-  username=
-  password=
+  username=andrea.calzavacca@gmail.com
+  password=@ntisg@mo
 
   url="https://mail.google.com/mail/feed/atom"
   COUNT=$(curl --silent --url "$url" --user $username:$password | sed -r 's/.*<fullcount>|<\/fullcount>.*//g')

@@ -1,0 +1,73 @@
+#!/bin/bash
+#gay homosexual stupid ass dumb calendar for BE::Shell to use in a 'label'
+#labels supports somekinda html so we print html code... if you try and
+#run this in a konsole you will get very weird results
+
+#temp files
+#if you change the settings these will have to be removed before changes take effect
+#you can do that easily w/ 
+# $ rm /tmp/gayCalendar*
+PREVOUTPUT="/tmp/gayCalendarOutPut"
+SAVEDDAY="/tmp/gayCalendarPrevCalDay"
+
+#colors
+#hex notation, rgba(red, gree, blue, alpha), or named color orange or so
+#to access the palette you can call palette(<role>) so eg palette(highlight)
+#would give the highlight color you have set. for the available roles
+#please consult the docs http://doc.qt.digia.com/4.7/stylesheet-reference.html#paletterole
+TODAY="white" 
+GLOW="rgba(0,0,0,0)"
+WEEKEND="orange"
+WEEK="gray"
+
+#sizes and margins
+#to make the days further away form each other we put them in a table w/ cells.
+#cellpadding is the value for how much padding to add to each cell
+CELLPADDING="8"
+#however,adds top/bottom padding too so we might need to set a negative topmargin
+#depending on our setup
+TOPMARGIN="-7px"
+
+PREVDAY="0"
+if [ -e $SAVEDDAY ]; then
+  PREVDAY=`cat $SAVEDDAY`
+fi
+
+DAY=`date +%e`
+echo $DAY > $SAVEDDAY
+MONTH=`date +%m`
+YEAR=`date +%Y`
+MESE=`date +%B`
+
+if [ $DAY = $PREVDAY ]; then
+  OUTPUT=`cat $PREVOUTPUT`
+else
+  OUTPUT="<table border="0" cellpadding="${CELLPADDING}" style=\"margin-top: ${TOPMARGIN}\"><tr><td style=\"color:white; font-weight:bold\">$MESE</td>"
+  BGGRAD="qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.4, fx:0.5, fy:0.5, stop: 0 ${GLOW}, stop: 1 transparent);"
+  
+  for (( I=1; I<32; I++ ))
+  do
+    ID=$I
+    if [ "$I" -lt 10 ]; then
+      ID="0$I"
+    fi
+    WEEKDAY=`date -d "$YEAR$MONTH$ID" +%a`
+    
+    if [ -z "$WEEKDAY" ]; then #this is for those gay months w/ less then 31 days...
+      break
+    fi
+    
+    if [ $I = $DAY ]; then
+      OUTPUT="${OUTPUT}<td style=\"color:white; background:${BGGRAD} font-weight:bold;\">$I</td> "
+    elif [ $WEEKDAY = "Sat" ] || [ $WEEKDAY = "Sun" ]; then
+      OUTPUT="${OUTPUT}<td style=\"color:${WEEKEND}; font-weight: bold;\">$I</td> "
+    else
+      OUTPUT="${OUTPUT}<td style=\"color:${WEEK};\">$I</td> "
+    fi
+  done
+
+  OUTPUT="${OUTPUT}</tr></table>"
+  echo "$OUTPUT" > $PREVOUTPUT
+fi
+
+echo "$OUTPUT"
