@@ -1,40 +1,20 @@
 #!/bin/bash
 
- 
 NORMAL="color:#000000;"
 STOPB="rgba(238,155,0,0)"
 STOPF="rgba(238,155,0,0)"
 STOPL="rgb(0,0,0)"
 HS="9pt"
 HF=""
-devname="/dev/sda7"
-ICONPATH="$HOME/.kde4/share/apps/be.shell/Scripts/"
 
-
-
-
-if [ $1 = "sensors" ]; then
-
-  g=`ps aux|awk 'NR > 0 { s +=$3 }; END {print "cpu %",s}'| awk '{print $3}'`
-  g="${g%%.*}"
-  l=`df -k $devname| grep -v ^File | awk '{ print $5 }'`
-  CPU=`sensors | sed -n '/temp1/p' | awk '{ print $2 }'`
-  TOT=`cat /proc/meminfo | grep MemTotal: | awk '{print $2}'`
-  USED=`cat /proc/meminfo | grep Active: | awk '{print $2}'`
-  let "USEDPERC=(1000*$USED/$TOT+5)"
-  PERC=`echo $USEDPERC|awk '{ print $1/10 }'`
-  PERC="${PERC%%.*}"
-  REPLY="${REPLY}<div>$(echo "<font color=\"#FFFFFF\"> $(echo $PERC)%</font>")&nbsp; $(echo "<font color=\"#FFFFFF\">$g%</font>")</div>"
-  echo "$REPLY"
-
-elif [ $1 = "net" ]; then
+if [ $1 = "net" ]; then
 
   NET=`nmcli -t -f state g`
   
     if [ $NET = "collegato" ]; then
-      echo "<img src=\"$HOME/.kde4/share/icons/flat/network-connect.svg\" width=\"20\" height=\"20\">"
+      echo "<img src=\"$HOME/.kde4/share/icons/flat/nm-connect.png\">"
     else
-      echo "<img src=\"$HOME/.kde4/share/icons/flat/network-disconnect.svg\" width=\"20\" height=\"20\">"
+      echo "<img src=\"$HOME/.kde4/share/icons/flat/nm-signal-0.png\" >"
     fi
     
 elif [ $1 = "wifi" ]; then
@@ -55,8 +35,8 @@ elif [ $1 = "wifi" ]; then
 
 elif [ $1 = "mpc" ]; then
 
-  SEP="- "
-  SEP1="."
+  SEP=" "
+  SEP1="-"
   MPC=`mpc -f "[%artist%]"|head -n 1`
   MPC1=`mpc -f "[%title% ]"|head -n 1`
   MPC2=`mpc -f "[%album%]"|head -n 1`
@@ -66,42 +46,55 @@ elif [ $1 = "mpc" ]; then
   
     if [ $STS = "[playing]" ]; then
     
-      BG="background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 ${STOPB}, stop: $(echo $PERC - 0.025|bc) ${STOPB},stop: ${PERC} ${STOPL}, stop: $(echo $PERC + 0.025|bc) ${STOPF},  stop: 1 ${STOPF});"
+      #BG="background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 ${STOPB}, stop: $(echo $PERC - 0.025|bc) ${STOPB},stop: ${PERC} ${STOPL}, stop: $(echo $PERC + 0.025|bc) ${STOPF},  stop: 1 ${STOPF});"
+      BG="background-color:transparent"
       DIVHEADER="<table valign="middle" cellspacing="0" cellpadding="0" style=\"${BG}\"><tr>"
-      echo "$DIVSTYLE$DIVHEADER<td><b>$MPC</b>$MPC1</td><td>$SEP</td><td><b>$MPC2</b></td><td>$SEP1</td><td>$MPC3</td></tr></table>"
+      echo "$DIVSTYLE$DIVHEADER<td><img src=\"$HOME/.kde4/share/icons/Yosemite-color/mine/play_t.svg\"width=\"16\"></td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td><b>$MPC</b></td><td>$SEP</td><td>$SEP1</td><td>$SEP</td><td>$MPC1</td><td>$SEP</td><td><b>$MPC2</b></td><td>$SEP</td><td>$SEP1</td><td>$SEP</td><td>$MPC3</td></tr></table>"
   
     elif [ $STS = "[paused]" ]; then
   
-      BG="background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 ${STOPB}, stop: $(echo $PERC - 0.025|bc) ${STOPB},stop: ${PERC} ${STOPL}, stop: $(echo $PERC + 0.025|bc) ${STOPF},  stop: 1 ${STOPF});"
+      #BG="background-color: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 ${STOPB}, stop: $(echo $PERC - 0.025|bc) ${STOPB},stop: ${PERC} ${STOPL}, stop: $(echo $PERC + 0.025|bc) ${STOPF},  stop: 1 ${STOPF});"
+      BG="background-color:transparent"
       DIVHEADER="<table valign="middle" cellspacing="0" cellpadding="0" style=\"${BG}\"><tr>"
-      echo "$DIVSTYLE$DIVHEADER<td><b>paused </b></td><td>$SEP</td><td><b>$MPC2</b></td><td>$SEP1</td><td>$MPC3</td></tr></table>"
+      echo "$DIVSTYLE$DIVHEADER<td><img src=\"$HOME/.kde4/share/icons/Yosemite-color/mine/pause_t.svg\"width=\"16\"></td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td>$SEP</td><td><b>$MPC2</b></td><td>$SEP</td><td>$SEP1</td><td>$SEP</td><td>$MPC3</td></tr></table>"
   
     else
   
       BG="background-color:transparent"
       DIVHEADER="<table valign="middle" cellspacing="0" cellpadding="0" style=\"${BG}\"><tr>"
-      echo "$DIVSTYLE$DIVHEADER<td><b>mpd</b>stop</td></tr></table>"
+      echo "$DIVSTYLE$DIVHEADER<td><img src=\"$HOME/.kde4/share/icons/Yosemite-color/mine/stop_t.svg\"width=\"14\"></td></tr></table>"
   
     fi
   
 elif [ $1 = "mail" ]; then
 
-  username=andrea.calzavacca@gmail.com
-  password=@ntisg@mo
-
+  username=
+  password=
   url="https://mail.google.com/mail/feed/atom"
   COUNT=$(curl --silent --url "$url" --user $username:$password | sed -r 's/.*<fullcount>|<\/fullcount>.*//g')
-  echo $COUNT
   
-elif [ $1 = "update" ]; then
+  if [ $COUNT == 0 ]; then
+    BG="background-color: transparent"
+    DIVHEADER="<table valign="middle" cellspacing="0" cellpadding="0" style=\"${BG}\"><tr>"
+    echo "$DIVSTYLE$DIVHEADER<td><img src=\"$HOME/.kde4/share/icons/Yosemite-color/mine/nomail.svg\"width=\"16\"></td></tr></table>"
+  else
+    BG="background-color: transparent"
+    DIVHEADER="<table valign="middle" cellspacing="0" cellpadding="0" style=\"${BG}\"><tr>"
+    echo "$DIVSTYLE$DIVHEADER<td><img src=\"$HOME/.kde4/share/icons/Yosemite-color/mine/mail.svg\"width=\"16\"></td></tr></table>"
+  fi
+  
+elif [ $1 = "up" ]; then
 
   UPR=`checkupdates | wc -l`
-  TOTR=`pacman -Qn | wc -l`
-  AUR=`cower -u | wc -l`
-  TOTA=`pacman -Qm | wc -l`
   
-  BG="background-color: transparent"
-  DIVHEADER="<table valign="middle" cellspacing="0" cellpadding="0" style=\"${BG}\"><tr>"
-  echo "$DIVSTYLE$DIVHEADER<td><b>$UPR</b></td><td>$TOTR</td><td><b>$AUR</b></td><td>$TOTA</td></tr></table>"
+    if [ $UPR == 0 ]; then
+      BG="background-color: transparent"
+      DIVHEADER="<table valign="middle" cellspacing="0" cellpadding="0" style=\"${BG}\"><tr>"
+      echo "$DIVSTYLE$DIVHEADER<td><img src=\"$HOME/.kde4/share/icons/Yosemite-color/mine/noupdate.svg\"width=\"16\"></td></tr></table>"
+    else
+      BG="background-color: transparent"
+      DIVHEADER="<table valign="middle" cellspacing="0" cellpadding="0" style=\"${BG}\"><tr>"
+      echo "$DIVSTYLE$DIVHEADER<td><img src=\"$HOME/.kde4/share/icons/Yosemite-color/mine/update.svg\"width=\"16\"></td></tr></table>"
+    fi
   
 fi  
