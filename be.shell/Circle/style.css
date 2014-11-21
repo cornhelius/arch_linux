@@ -1,0 +1,262 @@
+/*Circle theme for Be::Shell by Cornhelius 
+ 
+/* Here starts the panels config*/
+
+.BE--Volume { 
+  background-color:qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(190,190,190), stop:1 rgb(180,180,180));
+  padding-bottom:1px;
+  padding-left:0px;
+  padding-right:0px;
+  margin:0px;
+  max-width:19px;
+}
+
+#net {
+  background-color:qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(190,190,190), stop:1 rgb(180,180,180));
+  padding-right:5px;
+  border-bottom-right-radius:13px;
+  border-top-right-radius:13px;
+}
+
+.BE--MediaTray {
+  background-color:qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(190,190,190), stop:1 rgb(180,180,180));
+}
+
+.BE--MediaTray QToolButton {
+  background-color:rgba(0,0,0,0);
+  border:none;
+  padding-right:2px;
+  padding-left:2px;
+  padding-top:2px;
+  max-width:16px;
+}
+
+.BE--MediaTray QToolButton::hover {
+  border:none;
+}
+
+#BottomLeftPanel {
+  background-color:transparent;
+  border:none;
+  padding-bottom:5px;
+  padding-left:5px;
+}
+
+#TopLeftPanel {
+  background-color:transparent;
+  border:none;
+  padding-top:5px;
+  padding-left:5px;
+}
+
+#BottomRightPanel {
+  background-color:transparent;
+  border:none;
+  padding-bottom:5px;
+  padding-right:5px;
+}
+
+#start {
+  background-color:qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(200,200,200), stop:1 rgb(190,190,190));
+  border-bottom-left-radius:13px;
+  border-top-left-radius:13px;
+  border:none;
+  max-width:24;
+  padding-left:5;
+}
+
+.BE--Session:menu-indicator {
+  image:none;
+}
+
+#TopRightPanel {
+  background-color:transparent;
+  border:none;
+  padding-top:5px;
+  padding-right:5px;
+}
+
+#wmbutton {
+  background-color:qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(200,200,200), stop:1 rgb(190,190,190));
+  border-bottom-right-radius:13px;
+  border-bottom-left-radius:13px;
+  border-top-right-radius:13px;
+  border-top-left-radius:13px;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+.BE--WmCtrl QToolButton {
+  background-color:transparent;
+  border:none;
+  padding-right:2px;
+  padding-left:2px;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+/*.BE--WmCtrl QToolButton:hover {
+  background-color:white;
+  border:none;
+  margin:2px;
+  padding-right:2px;
+  padding-left:2px;
+  padding-top:5px;
+  padding-bottom:5px;
+  border-bottom-right-radius:11px;
+  border-bottom-left-radius:11px;
+  border-top-right-radius:11px;
+  border-top-left-radius:11px;
+}*/
+
+#upico {
+  background-color:qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(190,190,190), stop:1 rgb(180,180,180));
+  padding-left:3px;
+}
+
+#mail {
+  background-color:qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(190,190,190), stop:1 rgb(180,180,180));
+  color:rgb(0,0,0);
+  font-family:overlock sc;
+  padding-left:5px;
+  border-top-left-radius:13px;
+  border-bottom-left-radius:13px;
+}
+
+#mpc {
+  background-color:qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(190,190,190), stop:1 rgb(180,180,180));
+  padding-top:0px;
+  padding-right:5px;
+  padding-left:5px;
+  font-size:9pt;
+  font-family:oxygen sans;
+  border-top-right-radius:13px;
+  border-top-left-radius:13px;
+  border-bottom-right-radius:13px;
+  border-bottom-left-radius:13px;
+  border:none;
+  color:rgb(0,0,0);
+}
+
+#spacer {
+  max-width:5px;
+}
+
+/*Global Menu*/
+.BE--GMenu QMenuBar {  font:9pt overlock sc; padding:5 12 0 5; 
+  background-color:qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgb(200,200,200), stop:1 rgb(190,190,190));
+  border:none;
+  border-bottom-right-radius:13px;
+  border-top-right-radius:13px;
+}
+
+.BE--GMenu QMenuBar::item {
+  background-color:transparent;
+  color:rgb(0,0,0);
+}
+
+.BE--GMenu QMenuBar::item::selected {
+  color:rgb(255,255,255);
+  background-color:rgb(55,139,251);
+  border-radius:8px;
+}
+
+/*The menus */
+QMenu {
+  background:rgba(255,255,255,240);
+  color:rgb(0,0,0);
+  border:none;
+  font-size:9pt;
+  font-family:oxygen sans;
+}
+
+QMenu::item {
+  border:transparent;  
+  padding:3 24 3 2;
+}
+
+QMenu::item:selected {
+  background:rgb(55,139,251);
+  color:rgb(255,255,255);
+  padding:3 24 3 2;
+}
+
+QMenu::indicator {
+  subcontrol-origin: margin;
+  subcontrol-position: top right;
+  margin:6px;
+}
+
+QMenu::indicator:non-exclusive:unchecked {
+  background: rgba(255,255,255,70);
+  border:none;
+  margin:7px;
+}
+
+QMenu::indicator:non-exclusive:checked {
+  background:rgba(255,255,255,70);
+}
+
+QMenu::separator {
+  height:1px;
+  border:none;
+  background:rgb(226,225,227);
+}
+
+/*Calendar*/
+#Calendar {
+  background:rgba(62,175,232,150);
+  color:black;
+}
+
+#Calendar * {
+  color:black;
+  selection-background-color:rgba(62,175,232,150);
+  selection-color:black;
+}
+
+#Calendar QToolButton {
+  font-family:senza grazie;
+  font-size:9pt;
+  padding-left: 1px;
+  padding-top:1px;
+  padding-bottom:10px;
+  padding-right: 1px;
+}
+
+#Calendar QWidget {
+  font-size:7pt;
+  background:rgb(132,132,132);
+}
+
+#Calendar QWidget:Qlabel {
+  font-size:5pt;
+  background:rgb(132,132,132);
+}
+
+#Calendar QComboBox {
+  margin:4px;
+  padding-right:6px;
+  border:none;
+}
+
+#Calendar QComboBox::drop-down {
+  border:none;
+  background:transparent;
+}
+
+#Calendar QComboBox::down-arrow, QMenu::left-arrow {
+  position:absolute;
+  subcontrol-origin: margin;
+  subcontrol-position: top right;
+  margin:3px;
+  margin-top:6px;
+  margin-bottom:6px;
+  width:13px;
+  background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #BBBBBB, stop:1 #D1D1D1);
+  border:1px solid #AAAAAA;
+}*/
+
+#Calendar .KDatePicker {
+  margin:8px;
+}
